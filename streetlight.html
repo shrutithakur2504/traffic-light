@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>street light</title>
+  <style>
+  *{
+    margin:0;
+    padding:0;
+
+  }
+  
+  body{
+    width: 100vw;
+    height:90vh;
+    background-image: url(images/trafic.jpej.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+  
+    background-position: center;
+
+  
+
+  }
+
+
+  .main{
+    display: table;
+    border:6px solid black ;
+    border-radius: 25px;
+    margin:auto;
+    background: white;
+    position: relative;
+    right:300px;
+    top:29px
+    
+  
+  }
+  .light{
+    width: 50px;
+    height:50px;
+    margin: 10px;
+    border-radius: 50px;
+    background: black;
+    text-align: center;
+    font-size: 40px;
+    line-height: 35px;
+    font-family: sans-serif;
+  }
+  </style>
+
+  <script type="text/javascript">
+    var i=0;
+    var n=1;
+    var cArray=["red","yellow","green"];
+    function traficlight(){
+      var l=document.getElementsByClassName('light');
+      for(var j=0;j<l.length;j++){
+      l[j].style.background="black";
+      l[j].innerHTML="";
+      }
+      l[i].style.background=cArray[i];
+      if(i<l.length){
+        if(n<=3){
+          l[i].innerHTML=n;
+          n++;
+        }
+        if(n==4){
+          i++;
+          n=1;
+          if(i==3){
+            i=0;
+          }
+        }
+      
+      }
+      if(i==3){
+        i=0;
+      }
+
+    }
+    setInterval(traficlight,1000);
+
+
+
+</script>
+  
+</head>
+<body onload="trafficlight()">
+
+ <div class="main">
+     <div class="light"></div>
+     <div class="light"></div>
+     <div class="light"></div>
+     </div>
+  </body>
+</html>
